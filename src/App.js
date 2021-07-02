@@ -1,3 +1,4 @@
+import { render } from "@testing-library/react";
 import React, { useState, useEffect } from "react";
 const App = () => {
 
@@ -8,8 +9,9 @@ const App = () => {
       async function fetchData() {
         try {
           const response = await fetch("https://fetch-hiring.s3.amazonaws.com/hiring.json");
-          const data = await response.json();
-          setList(data);
+          let data = await response.json();
+          let filteredData = data.filter(item => item.name)
+          setList(filteredData);
           console.log(data)
         }
 
@@ -23,11 +25,17 @@ const App = () => {
 
 
 
+
   return (
     <div>
-     {list && list.map((item) => <p>{item.name}</p>)}
-     {/* {list && JSON.stringify(list)} */}
-    </div>
+     {list && list.map((item) => 
+     <div>
+     <p>Name: {item.name}</p>
+     <p>ID: {item.id}</p>
+     <p>ListId: {item.listId}</p>
+     </div>
+      )}
+    </div> 
   );
 }
 
