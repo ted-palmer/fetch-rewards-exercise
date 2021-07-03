@@ -11,7 +11,7 @@ Display this list of items to the user based on the following requirements:
 
 ## [Live demo of my app](https://fetch-rewards-exercise.herokuapp.com/)
 
-## Running the app
+## Running the app locally
 ```
 git clone https://github.com/ted-palmer/fetch-rewards-exercise.git
 cd fetch-rewards-exercise
