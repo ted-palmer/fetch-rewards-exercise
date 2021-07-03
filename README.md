@@ -13,7 +13,7 @@ Display this list of items to the user based on the following requirements:
 
 ## Running the app
 ```
-git clone https://github.com/ted-palmer/fetch-rewards-exercise
+git clone https://github.com/ted-palmer/fetch-rewards-exercise.git
 cd fetch-rewards-exercise
 npm install
 npm start
