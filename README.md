@@ -6,8 +6,8 @@ Please write a web app that retrieves the data from https://fetch-hiring.s3.amaz
 
 Display this list of items to the user based on the following requirements:
 
-*Display all the items grouped by "listId"
-*Sort the results first by "listId" then by "name" when displaying.
-*Filter out any items where "name" is blank or null.
+* Display all the items grouped by "listId"
+* Sort the results first by "listId" then by "name" when displaying.
+* Filter out any items where "name" is blank or null.
 
 [Live Demo](https://fetch-rewards-exercise.herokuapp.com/)
