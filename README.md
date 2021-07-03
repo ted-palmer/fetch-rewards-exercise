@@ -9,7 +9,7 @@ Display this list of items to the user based on the following requirements:
 * Sort the results first by "listId" then by "name" when displaying.
 * Filter out any items where "name" is blank or null.
 
-[Live demo of my app](https://fetch-rewards-exercise.herokuapp.com/)
+## [Live demo of my app](https://fetch-rewards-exercise.herokuapp.com/)
 
 ## Running the app
 ```
