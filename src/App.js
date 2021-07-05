@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from "react";
-import { Table } from 'antd';
+import { Table, Tabs } from 'antd';
 const App = () => {
-
   const [list, setList] = useState([]);
+  const { TabPane } = Tabs;
 
   //Fetch data
   useEffect(() => {
@@ -25,7 +25,6 @@ const App = () => {
         filteredData.map((row) => (row.key = row.id));
 
         setList(filteredData);
-
       } catch (e) {
         console.log(e);
       }
@@ -39,36 +38,41 @@ const App = () => {
   const list3 = list.filter((item) => item.listId === 3);
   const list4 = list.filter((item) => item.listId === 4);
 
-
   //Columns for table
   const columns = [
     {
-      title: 'id',
-      dataIndex: 'id',
-      key: 'id',
+      title: "id",
+      dataIndex: "id",
+      key: "id",
     },
     {
-      title: 'listId',
-      dataIndex: 'listId',
-      key: 'listId',
+      title: "listId",
+      dataIndex: "listId",
+      key: "listId",
     },
     {
-      title: 'name',
-      dataIndex: 'name',
-      key: 'name',
+      title: "name",
+      dataIndex: "name",
+      key: "name",
     },
   ];
 
   return (
     <div className="container">
-      <h1>List 1</h1>
-      <Table dataSource={list1} columns={columns} size="small"/>
-      <h1>List 2</h1>
-      <Table dataSource={list2} columns={columns} size="small"/>
-      <h1>List 3</h1>
-      <Table dataSource={list3} columns={columns} size="small"/>
-      <h1>List 4</h1>
-      <Table dataSource={list4} columns={columns} size="small"/>
+      <Tabs defaultActiveKey="1" type="card">
+        <TabPane tab="List 1" key="1">
+          <Table dataSource={list1} columns={columns} size="small" />
+        </TabPane>
+        <TabPane tab="List 2" key="2">
+          <Table dataSource={list2} columns={columns} size="small" />
+        </TabPane>
+        <TabPane tab="List 3" key="3">
+          <Table dataSource={list3} columns={columns} size="small" />
+        </TabPane>
+        <TabPane tab="List 4" key="4">
+          <Table dataSource={list4} columns={columns} size="small" />
+        </TabPane>
+      </Tabs>
     </div>
   );
 };
