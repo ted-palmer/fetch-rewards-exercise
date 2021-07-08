@@ -64,16 +64,16 @@ const App = () => {
     <div className="container">
       <Tabs defaultActiveKey="1" type="card">
         <TabPane tab="List 1" key="1">
-          <Table dataSource={groups.list1} columns={columns} size="small" />
+          <Table dataSource={groups.list1} columns={columns} size="small" rowKey={item => item.id}/>
         </TabPane>
         <TabPane tab="List 2" key="2">
-          <Table dataSource={groups.list2} columns={columns} size="small" />
+          <Table dataSource={groups.list2} columns={columns} size="small" rowKey={item => item.id}/>
         </TabPane>
         <TabPane tab="List 3" key="3">
-          <Table dataSource={groups.list3} columns={columns} size="small" />
+          <Table dataSource={groups.list3} columns={columns} size="small" rowKey={item => item.id}/>
         </TabPane>
         <TabPane tab="List 4" key="4">
-          <Table dataSource={groups.list4} columns={columns} size="small" />
+          <Table dataSource={groups.list4} columns={columns} size="small" rowKey={item => item.id}/>
         </TabPane>
       </Tabs>
     </div>
