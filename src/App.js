@@ -22,7 +22,7 @@ const App = () => {
           });
 
         //Add a unique key to each row
-        filteredData.map((row) => (row.key = row.id));
+        // filteredData.map((row) => (row.key = row.id));
 
         setList(filteredData);
       } catch (e) {
@@ -32,11 +32,14 @@ const App = () => {
     fetchData();
   }, []);
 
+
   //Filter items by listId
-  const list1 = list.filter((item) => item.listId === 1);
-  const list2 = list.filter((item) => item.listId === 2);
-  const list3 = list.filter((item) => item.listId === 3);
-  const list4 = list.filter((item) => item.listId === 4);
+  const groups = {
+    list1: list.filter((item) => item.listId === 1),
+    list2: list.filter((item) => item.listId === 2),
+    list3: list.filter((item) => item.listId === 3),
+    list4: list.filter((item) => item.listId === 4)
+  }
 
   //Columns for table
   const columns = [
@@ -61,16 +64,16 @@ const App = () => {
     <div className="container">
       <Tabs defaultActiveKey="1" type="card">
         <TabPane tab="List 1" key="1">
-          <Table dataSource={list1} columns={columns} size="small" />
+          <Table dataSource={groups.list1} columns={columns} size="small" />
         </TabPane>
         <TabPane tab="List 2" key="2">
-          <Table dataSource={list2} columns={columns} size="small" />
+          <Table dataSource={groups.list2} columns={columns} size="small" />
         </TabPane>
         <TabPane tab="List 3" key="3">
-          <Table dataSource={list3} columns={columns} size="small" />
+          <Table dataSource={groups.list3} columns={columns} size="small" />
         </TabPane>
         <TabPane tab="List 4" key="4">
-          <Table dataSource={list4} columns={columns} size="small" />
+          <Table dataSource={groups.list4} columns={columns} size="small" />
         </TabPane>
       </Tabs>
     </div>
